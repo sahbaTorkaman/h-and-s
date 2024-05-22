@@ -1,3 +1,13 @@
 from django.contrib import admin
+from .models import Services,Team,Skill,Portfolio
 
-# Register your models here.
+
+
+class SkillAdmin(admin.ModelAdmin):
+    list_display = ['title','percent']
+
+
+admin.site.register(Services)
+admin.site.register(Team)
+admin.site.register(Skill,SkillAdmin)
+admin.site.register(Portfolio)

@@ -1,7 +1,11 @@
 from django.shortcuts import render
+from models import Services,Skill,Team,Portfolio
 
 
-def home (request):
-    return render(request,'root/index.html')
+def index (request):
+    context = {
+        'services':Services.objects.filter(status=True),
+        
+    }
 
 # Create your views here.
